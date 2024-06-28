@@ -1,0 +1,21 @@
+ServerEvents.recipes(e =>{
+    e.shaped(
+        'kubejs:mana_tube',
+        [
+            'D',
+            'T'
+        ],{
+            D:'kubejs:polished_mana_diamond',
+            T:'kubejs:terrasteel_sheet'
+        }
+    )
+    e.recipes.create.sandpaper_polishing('kubejs:polished_mana_diamond','botania:mana_diamond')
+    e.recipes.create.pressing('kubejs:terrasteel_sheet','botania:terrasteel_ingot')
+    e.recipes.createMechanicalExtruderExtruding(
+        Item.of('kubejs:serpentinite'),
+        [
+            Fluid.of('minecraft:lava'),
+            Item.of('minecraft:blue_ice')
+        ]
+    ).withCatalyst('kubejs:olivine')
+})
